@@ -42,13 +42,12 @@
 //     }
 // });
 
-var name =false;
-var email = false;
-var sub = false;
-var message = false;
+
 var count =0;
 
 function validae(){
+
+    document.getElementById("send").style.display="none";  
     
     var validemail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -116,8 +115,12 @@ function send(){
                 url:"https://script.google.com/macros/s/AKfycbw157c2zP6HQebbTRtPvrFqNvUJmxcC0ldaok097DdR_R1xM8_cmFPjATmOHmHb0ZkX/exec",
                 data:$("#submit-form").serialize(),
                 method:"post",
-                success:function (response){
-                document.getElementById("send").style.display="block";   
+                beforeSend:function(){
+                    document.getElementById("load").style.display="block";
+                },
+                success:function (){
+                document.getElementById("load").style.display="none";
+                document.getElementById("send").style.cssText="display:block; background-color: green;"; 
                 document.getElementById("send").innerHTML="Your Message has send succesfully"; 
                 
                 setTimeout(function(){
@@ -132,7 +135,8 @@ function send(){
             })
         })  
     }else{
-        
+        document.getElementById("send").style.cssText="display:block; background-color: red;"   
+        document.getElementById("send").innerHTML="Please fill all fields"; 
     }
 }
 

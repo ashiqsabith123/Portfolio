@@ -426,7 +426,8 @@
       <form id="submit-form" action="" method="POST"  class="php-email-form mt-4">
         <div class="row">
           <div class="col-md-6 form-group">
-            <input type="text" name="name" class="form-control" id="name" onkeyup="validae()" placeholder="Your Name" >
+            <input type="text" name="name" class="form-control" id="name" onkeyup="validae()" onkeypress="return (event.charCode > 64 && 
+            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"  placeholder="Your Name" >
             <div class="h5" ><p id="namep" style="color: red; font-size: 14px;"></p></div>
           </div>
           <div class="col-md-6 form-group mt-3 mt-md-0">
@@ -443,7 +444,7 @@
           <div class="h5" ><p id="msgp" style="color: red; font-size: 14px;"></p></div>
         </div>
         <div class="my-3">
-          <div class="loading">Loading</div>
+          <div id="load" class="loading">Loading</div>
           
           <div id="send"  class="sent-message"></div>
         </div>
