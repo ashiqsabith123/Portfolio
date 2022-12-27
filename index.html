@@ -51,7 +51,7 @@
           <li><a class="nav-link active" href="#header">Home</a></li>
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#resume">Resume</a></li>
-          
+          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
          
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
@@ -310,6 +310,68 @@
   
 
   <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Portfolio</h2>
+        <p>My Works</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            
+            <li data-filter=".filter-web">Web</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row portfolio-container">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="assets/img/Screenshot from 2022-12-26 20-21-43.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 1</h4>
+              <p>Web</p>
+            
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="assets/img/Screenshot from 2022-12-26 20-21-03.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="assets/img/Screenshot from 2022-12-26 20-22-47.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+            
+            </div>
+          </div>
+        </div>
+
+        
+
+
+      
+
+      </div>
+
+    </div>
+  </section>
  <!-- End Portfolio Section -->
 
   <!-- ======= Contact Section ======= -->
@@ -364,24 +426,28 @@
       <form id="submit-form" action="" method="POST"  class="php-email-form mt-4">
         <div class="row">
           <div class="col-md-6 form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            <input type="text" name="name" class="form-control" id="name" onkeyup="validae()" placeholder="Your Name" >
+            <div class="h5" ><p id="namep" style="color: red; font-size: 14px;"></p></div>
           </div>
           <div class="col-md-6 form-group mt-3 mt-md-0">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            <input type="text" class="form-control" name="email" id="email"  onkeyup="validae()" placeholder="Your Email" >
+            <div class="h5" ><p id="emailp" style="color: red; font-size: 14px;"></p></div>
           </div>
         </div>
         <div class="form-group mt-3">
-          <input type="text" class="form-control" name="color" id="subject" placeholder="Subject" required>
+          <input type="text" class="form-control" name="color" id="subject" onkeyup="validae()" placeholder="Subject" >
+          <div class="h5" ><p id="subp" style="color: red; font-size: 14px;"></p></div>
         </div>
         <div class="form-group mt-3">
-          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" onkeyup="validae()" ></textarea>
+          <div class="h5" ><p id="msgp" style="color: red; font-size: 14px;"></p></div>
         </div>
         <div class="my-3">
           <div class="loading">Loading</div>
           
-          <div id="send" class="sent-message">Your message has been sent. Thank you!</div>
+          <div id="send"  class="sent-message"></div>
         </div>
-        <div class="text-center"><button type="submit">Send Message</button></div>
+        <div class="text-center"><button type="submit" onclick="send()">Send Message</button></div>
       </form>
 
     </div>
